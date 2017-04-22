@@ -1,26 +1,20 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href=<%= root_path %>>
-    <img src="https://scontent.fbud2-1.fna.fbcdn.net/v/t31.0-8/1272800_586255634763856_742430169_o.jpg?oh=a77074c188e0c3c62229eb532d720f7d&oe=59771DE6" alt="FS" class="img-thumbnail rounded" width="60">
+  <a class="navbar-brand">
+    <img src="https://scontent.fbud2-1.fna.fbcdn.net/v/t31.0-8/1272800_586255634763856_742430169_o.jpg?oh=a77074c188e0c3c62229eb532d720f7d&oe=59771DE6" alt="FS" class="rounded" width="30">
+    FS
   </a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="nav navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href=<%= root_path %>>Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href=<%= home_about_path %>>Link</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>

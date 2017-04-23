@@ -1,20 +1,11 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2 class="panel-heading"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Pin show</h2>
-  </div>
-  <div class="panel-body">
+
     <p id="notice"><%= notice %></p>
-    <div class="form-group">
       <p>
+        <%= image_tag @pin.image.url(:medium) %><br/>
         <strong>Opis: </strong>
         <%= @pin.description %>
       </p>
-    </div>
-  </div>
-  <div class="panel-footer">
     <% if @pin.user == current_user %>
       <%= link_to 'Edycja', edit_pin_path(@pin) %> |
     <% end %>
     <%= link_to 'Powrót', pins_path %>
-  </div>
-</div>

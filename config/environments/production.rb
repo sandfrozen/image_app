@@ -78,4 +78,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.action_mailer.default_url_options = { host: 'http://frozensandas.herokuapp.com' }
+  
+  Cloudinary.config do |config|
+    config.cloud_name = ENV['CLOUD_NAME']
+    config.api_key = ENV['CLOUD_API_KEY']
+    config.api_secret = ENV['CLOUD_API_SECRET']
+    config.cdn_subdomain = true
+  end
 end

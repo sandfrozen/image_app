@@ -82,10 +82,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :store => :cloudinary,
     :cloudinary_credentials => {
-      :cloud_name = ENV['CLOUD_NAME'],
-      :api_key = ENV['CLOUD_API_KEY'],
-      :api_secret = ENV['CLOUD_API_SECRET'],
-      :cdn_subdomain = true
+      :cloud_name => ENV['CLOUD_NAME'],
+      :api_key => ENV['CLOUD_API_KEY'],
+      :api_secret => ENV['CLOUD_API_SECRET'],
+      :cdn_subdomain => :true
     }
   }
 end

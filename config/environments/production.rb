@@ -79,7 +79,7 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'http://frozensandas.herokuapp.com' }
   
-  config.peperclip_defaults = {
+  config.paperclip_defaults = {
     :store => :cloudinary,
     :cloudinary_credentials => {
       :cloud_name = ENV['CLOUD_NAME'],

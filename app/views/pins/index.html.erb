@@ -2,7 +2,7 @@
 
 <h1>Piny</h1>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-responsive">
   <thead>
     <tr>
       <th>Obraz</th>
@@ -16,7 +16,7 @@
       <tr valign="middle">
         <td><%= image_tag pin.image.url(:thumb) %></td>
         <td><%= pin.description %></td>
-        <td class="vertical-center"><%= link_to 'Pokaż', pin %></td>
+        <td><%= link_to 'Pokaż', pin %></td>
         <% if pin.user == current_user %>
           <td><%= link_to 'Edycja', edit_pin_path(pin) %></td>
           <td><%= link_to 'Usuń', pin, method: :delete, data: { confirm: 'Na pewno usunąć pin?' } %></td>

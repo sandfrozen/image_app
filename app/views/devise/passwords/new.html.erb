@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-heading">jakie to było hasło.. <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></h2>
+  </div>
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+    
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit "Nowe hasło na email", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="panel-footer">
+  <%= render "devise/shared/links" %>
+  </div>
+</div>

@@ -1,20 +1,33 @@
-<nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand">
-    <img src="https://scontent.fbud2-1.fna.fbcdn.net/v/t31.0-8/1272800_586255634763856_742430169_o.jpg?oh=a77074c188e0c3c62229eb532d720f7d&oe=59771DE6" alt="FS" class="rounded" width="30">
-    FS
-  </a>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">
+        <img src="https://scontent.fbud2-1.fna.fbcdn.net/v/t31.0-8/1272800_586255634763856_742430169_o.jpg?oh=a77074c188e0c3c62229eb532d720f7d&oe=59771DE6" alt="FS" class="img-rounded" width="30"/>
+      </a>
+      <a class="navbar-brand">
+        Image app by  <span class="frozens">FrozenSand</span>
+      </a>
+    </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="nav navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href=<%= root_path %>>Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href=<%= home_about_path %>>Link</a>
-      </li>
-    </ul>
-  </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to '', root_path, class: 'glyphicon glyphicon-tent' %></li>
+        <li><%= link_to '', home_about_path, class: 'glyphicon glyphicon-info-sign' %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to '', edit_user_registration_path, class: 'glyphicon glyphicon-user' %></li>
+          <li><%= link_to '', destroy_user_session_path, class: 'glyphicon glyphicon-remove', method: :delete %></li>
+        <% else %>
+          <li><%= link_to '', new_user_session_path, class: 'glyphicon glyphicon-user' %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>

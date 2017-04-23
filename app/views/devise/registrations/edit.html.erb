@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-heading">Szczegóły Twojego konta<h2>
+  </div>
+  <div class="panel-body">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+  
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+  
+    <div class="form-group">
+      <%= f.label :nowe_hasło %> <i>(wpisz, jeśli chcesz zmienić)</i><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em>minimum <%= @minimum_password_length %> znaków</em>
+      <% end %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :potwiedź_nowe_hasło %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :aktualne_hasło %> <i>(wprowadź aktualne hasło, aby zmienić dane)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Update", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to "Powrót", :back %>
+  </div>
+  <div class="panel-footer">
+    <h3>Usuwanie konta</h3>
+    <p><%= button_to "Chcę usunąć konto", registration_path(resource_name), class: 'btn btn-danger', data: { confirm: "Na pewno chcesz usunąć konto?" }, method: :delete %></p>
+  </div>
+</div>

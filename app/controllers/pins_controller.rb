@@ -1,5 +1,8 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /pins
   # GET /pins.json
@@ -14,7 +17,8 @@ class PinsController < ApplicationController
 
   # GET /pins/new
   def new
-    @pin = Pin.new
+    #@pin = Pin.new
+    @pin = current_user.pins.build
   end
 
   # GET /pins/1/edit
@@ -24,11 +28,12 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin = Pin.new(pin_params)
+    #@pin = Pin.new(pin_params)
+    @pin = current_user.pins.build(pin_params)
 
     respond_to do |format|
       if @pin.save
-        format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
+        format.html { redirect_to @pin, notice: 'Pin został dodany' }
         format.json { render :show, status: :created, location: @pin }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class PinsController < ApplicationController
   def update
     respond_to do |format|
       if @pin.update(pin_params)
-        format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
+        format.html { redirect_to @pin, notice: 'Pin został zmieniony' }
         format.json { render :show, status: :ok, location: @pin }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     respond_to do |format|
-      format.html { redirect_to pins_url, notice: 'Pin was successfully destroyed.' }
+      format.html { redirect_to pins_url, notice: 'Pin został usunięty' }
       format.json { head :no_content }
     end
   end
@@ -70,5 +75,10 @@ class PinsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
       params.require(:pin).permit(:description)
+    end
+    
+    def correct_user
+      @pin = current_user.pins.find_by(id: params[:id])
+      redirect_to pins_path, notice: "Nie możesz edytować nieswojego pinu" if @pin.nil?
     end
 end

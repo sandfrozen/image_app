@@ -30,7 +30,6 @@ class PinsController < ApplicationController
   def create
     #@pin = Pin.new(pin_params)
     @pin = current_user.pins.build(pin_params)
-
     respond_to do |format|
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin został dodany' }

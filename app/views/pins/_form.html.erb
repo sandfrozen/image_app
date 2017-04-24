@@ -18,7 +18,7 @@
         <%= f.text_field :description, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :image, 'Obraz' %><br>
+        <%= f.hidden_field :image_cache %>
         <%= f.file_field :image, class: 'form-control' %>
       </div>
       <div class="actions">

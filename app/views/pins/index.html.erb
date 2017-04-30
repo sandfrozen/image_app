@@ -14,7 +14,7 @@
   <tbody>
     <% @pins.each do |pin| %>
       <tr valign="middle">
-        <td><%= image_tag pin.image.url(:thumb) %></td>
+        <td><%= image_tag pin.image.url :medium %></td>
         <td><%= pin.description %></td>
         <td><%= link_to 'Pokaż', pin %></td>
         <% if pin.user == current_user %>

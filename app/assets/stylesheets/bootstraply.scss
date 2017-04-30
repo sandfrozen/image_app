@@ -3,18 +3,29 @@
 }
 
 .frozens{
-    font-family: "Brush Script MT", cursive;
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
+    font-family: "Permanent Marker";
     color: #8c3a76;
 }
 
 $navbar-default-brand-hover-color: #3a5d8c;
 $navbar-default-link-hover-color: #3a5d8c;
-$font-family-base: Copperplate, "Copperplate Gothic Light", fantasy;
+$font-family-base: "Metrophobic";
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-style: bold;
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

@@ -11,21 +11,5 @@ $navbar-default-brand-hover-color: #3a5d8c;
 $navbar-default-link-hover-color: #3a5d8c;
 $font-family-base: "Metrophobic";
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-	font-style: bold;
-}
-
 @import "bootstrap-sprockets";
 @import "bootstrap";

@@ -1,15 +1,15 @@
-// .glyphicon {
-//     font-size: 20px;
-// }
+.glyphicon {
+    font-size: 20px;
+}
 
-// .frozens{
-//     font-family: "Permanent Marker";
-//     color: #8c3a76;
-// }
+.frozens{
+    font-family: "Permanent Marker";
+    color: #8c3a76;
+}
 
-// $navbar-default-brand-hover-color: #3a5d8c;
-// $navbar-default-link-hover-color: #3a5d8c;
-// $font-family-base: "Metrophobic";
+$navbar-default-brand-hover-color: #3a5d8c;
+$navbar-default-link-hover-color: #3a5d8c;
+$font-family-base: "Metrophobic";
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

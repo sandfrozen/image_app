@@ -3,7 +3,7 @@ class Pin < ActiveRecord::Base
     
     has_attached_file :image, 
                       :storage => :cloudinary,
-                      :path => ':id/:style',
+                      :path => ':id/:style/:filename',
                       :styles => { :medium => "300x300>", :thumb => "100x100>" },
                       :cloudinary_credentials => Rails.root.join("config/cloudinary.yml"),
                       :cloudinary_resource_type => :image,

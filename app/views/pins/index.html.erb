@@ -17,7 +17,7 @@
       <div class="imagebox">
         <%= image_tag pin.image.url(:medium) %>
         <div class="overlay">
-          <div class="text"><small>@<em><%= pin.user.name if pin.user %></em></small></div>
+          <div class="text"><em>@<%= pin.user.name if pin.user %></em></div>
         </div>
         <% end %>
       </div>

@@ -7,8 +7,13 @@
     <%= devise_error_messages! %>
   
     <div class="form-group">
+      <%= f.label :name, 'Nazwa' %><br />
+      <%= f.text_field  :name, autofocus: true, class: 'form-control' %>
+    </div>
+  
+    <div class="form-group">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, class: 'form-control' %>
     </div>
   
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -16,22 +21,20 @@
     <% end %>
   
     <div class="form-group">
-      <%= f.label :nowe_hasło %> <i>(wpisz, jeśli chcesz zmienić)</i><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.label :password, 'Nowe hasło' %> <i>(wpisz, jeśli chcesz zmienić,</i> <em>minimum <%= @minimum_password_length %> znaków</em>)<br />
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
       <% if @minimum_password_length %>
-        <br />
-        <em>minimum <%= @minimum_password_length %> znaków</em>
       <% end %>
     </div>
   
     <div class="form-group">
-      <%= f.label :potwiedź_nowe_hasło %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.label :password_confirmation, 'Potwierdź hasło' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
     </div>
   
     <div class="form-group">
-      <%= f.label :aktualne_hasło %> <i>(wprowadź aktualne hasło, aby zmienić dane)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
+      <%= f.label :current_password, 'Aktualne hasło' %> <i>(wprowadź aktualne hasło, aby zmienić dane)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
     </div>
   
     <div class="actions">

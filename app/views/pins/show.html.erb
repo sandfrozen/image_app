@@ -3,6 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading center"><%= image_tag @pin.image.url(:medium)  %></div>
       <div class="panel-body">
+        <strong>Autor: </strong><%= @pin.user.name %><br />
         <strong>Opis: </strong><%= @pin.description %><br />
         <% if @pin.user == current_user %>
           <%= link_to 'Edycja', edit_pin_path(@pin) %>

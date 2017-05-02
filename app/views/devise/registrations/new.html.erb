@@ -7,14 +7,19 @@
     <%= devise_error_messages! %>
 
     <div class="form-group">
+      <%= f.label :name, 'Nazwa' %><br />
+      <%= f.text_field  :name, autofocus: true, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      <%= f.email_field :email, class: 'form-control' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :hasło %>
+      <%= f.label :password, 'Hasło' %>
       <% if @minimum_password_length %>
-      <em>(minimum <%= @minimum_password_length %> znaków)</em>
+        <em>(minimum <%= @minimum_password_length %> znaków)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
     </div>
